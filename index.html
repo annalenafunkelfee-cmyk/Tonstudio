@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Hörspiel Soundboard</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #aee1f9, #fdfdfd);
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .sound-btn {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        font-size: 18px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        cursor: pointer;
+        transition: transform 0.1s, background 0.2s;
+    }
+
+    .sound-btn:hover {
+        background: #dff6ff;
+        transform: scale(1.05);
+    }
+
+    .controls {
+        margin-top: 30px;
+    }
+
+    button.control {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 5px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .stop {
+        background: #ff6b6b;
+        color: white;
+    }
+
+    .stop:hover {
+        background: #ff4b4b;
+    }
+</style>
+
+</head>
+
+<body>
+
+<h1>🎭 Hörspiel Soundboard</h1>
+<p>Klicke auf einen Sound und erzähle deine Geschichte!</p>
+
+<div class="container">
+
+    <div class="sound-btn" onclick="playSound('kinder')">🧒 Kinder spielen</div>
+    <div class="sound-btn" onclick="playSound('pausenhof')">🏫 Pausenhof</div>
+    <div class="sound-btn" onclick="playSound('schule')">🎒 Schule Hintergrund</div>
+    <div class="sound-btn" onclick="playSound('glocke1')">🔔 Schulglocke 1</div>
+    <div class="sound-btn" onclick="playSound('glocke2')">🔔 Schulglocke 2</div>
+    <div class="sound-btn" onclick="playSound('tuer')">🚪 Tür</div>
+
+</div>
+
+<div class="controls">
+    <button class="control stop" onclick="stopAll()">⏹ Alle stoppen</button>
+</div>
+
+<!-- Sounds -->
+<audio id="kinder" src="kinder.mp3"></audio>
+<audio id="pausenhof" src="pausenhof.mp3"></audio>
+<audio id="schule" src="schule.mp3"></audio>
+<audio id="glocke1" src="glocke1.mp3"></audio>
+<audio id="glocke2" src="glocke2.mp3"></audio>
+<audio id="tuer" src="tuer.mp3"></audio>
+
+<script>
+function playSound(id) {
+    let sound = document.getElementById(id);
+    sound.currentTime = 0;
+    sound.play();
+}
+
+function stopAll() {
+    let sounds = document.querySelectorAll("audio");
+    sounds.forEach(s => {
+        s.pause();
+        s.currentTime = 0;
+    });
+}
+</script>
+
+</body>
+</html>
