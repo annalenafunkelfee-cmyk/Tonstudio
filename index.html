@@ -21,7 +21,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 20px;
-        max-width: 800px;
+        max-width: 900px;
         margin: auto;
     }
 
@@ -79,6 +79,11 @@
     <div class="sound-btn" onclick="playSound('glocke2')">🔔 Schulglocke 2</div>
     <div class="sound-btn" onclick="playSound('tuer')">🚪 Tür</div>
 
+    <div class="sound-btn" onclick="playSound('klopfen')">🚪 Anklopfen</div>
+    <div class="sound-btn" onclick="playSound('reissverschluss')">🎒 Reißverschluss</div>
+    <div class="sound-btn" onclick="playSound('rucksack')">🎒 Rucksack wühlen</div>
+    <div class="sound-btn" onclick="playSound('brotdose')">🥪 Brotdose</div>
+
 </div>
 
 <div class="controls">
@@ -92,6 +97,11 @@
 <audio id="glocke1" src="glocke1.mp3"></audio>
 <audio id="glocke2" src="glocke2.mp3"></audio>
 <audio id="tuer" src="tuer.mp3"></audio>
+
+<audio id="klopfen" src="klopfen.mp3"></audio>
+<audio id="reissverschluss" src="reissverschluss.mp3"></audio>
+<audio id="rucksack" src="rucksack.mp3"></audio>
+<audio id="brotdose" src="brotdose.mp3"></audio>
 
 <script>
 function playSound(id) {
